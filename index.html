@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking Suite — Appointments for salons, clinics &amp; consultants</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="app-header">
+    <div class="brand">
+      <span class="brand-name">Booking Suite</span>
+      <span class="brand-sub">Appointments for salons, clinics &amp; consultants</span>
+    </div>
+    <div class="header-actions">
+      <button class="btn" id="btn-export">Export JSON</button>
+      <button class="btn" id="btn-import">Import</button>
+      <button class="btn" id="btn-reset">Reset demo data</button>
+      <input type="file" id="import-file" accept="application/json,.json" hidden>
+    </div>
+  </header>
+
+  <nav class="tabs">
+    <button class="tab active" data-view="today">Today</button>
+    <button class="tab" data-view="calendar">Calendar</button>
+    <button class="tab" data-view="book">Book</button>
+    <button class="tab" data-view="customers">Customers</button>
+    <button class="tab" data-view="admin">Admin</button>
+  </nav>
+
+  <main id="app"></main>
+  <div id="modal-root"></div>
+
+  <!-- plain scripts in dependency order — works over file:// -->
+  <script src="store.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
