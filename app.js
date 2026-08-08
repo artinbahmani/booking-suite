@@ -198,6 +198,8 @@
     });
 
     app.querySelectorAll('.cal-day-head').forEach(function (h) {
+      /* Day-mode staff headers carry no date — they are labels, not links. */
+      if (!h.dataset.date) return;
       h.addEventListener('click', function () {
         calAnchor = h.dataset.date; calMode = 'day'; render();
       });
